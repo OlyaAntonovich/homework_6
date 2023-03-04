@@ -6,10 +6,54 @@
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/edit_text"
+        android:id="@+id/edit_text_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
-        android:hint="name"/>
+        android:hint="@string/name"/>
+
+    <EditText
+        android:id="@+id/edit_text_surname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:hint="@string/surname"/>
+
+    <EditText
+        android:id="@+id/edit_text_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:inputType="phone"
+        android:hint="phone"/>
+
+    <EditText
+        android:id="@+id/edit_text_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:inputType="number"
+        android:hint="age"/>
+
+    <EditText
+        android:id="@+id/edit_text_dob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:inputType="date"
+        android:hint="date ob birth"/>
+
+    <Button
+        android:id="@+id/button_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BTN1"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text=""/>
+
 
 </LinearLayout>
