@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,15 +12,14 @@
         android:layout_height="wrap_content"
         android:hint="@string/name"
         android:inputType="textMultiLine"
-        android:lines="1"
-        android:text="" />
+        android:lines="1" />
 
     <EditText
         android:id="@+id/edit_text_surname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/surname"
-        android:minLines="1"
+        android:maxLines="1"
         android:text="" />
 
     <EditText
@@ -27,8 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/phone"
-        android:inputType="phone"
-        android:text="" />
+        android:inputType="phone" />
 
     <EditText
         android:id="@+id/edit_text_age"
@@ -36,28 +35,36 @@
         android:layout_height="wrap_content"
         android:hint="@string/age"
         android:inputType="number"
-        android:maxLength="2"
-        android:text="" />
+        android:maxLength="2" />
 
     <EditText
         android:id="@+id/edit_text_dob"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/date_ob_birth"
-        android:inputType="date"
-        android:text="" />
+        android:inputType="date" />
+<!--    <TextView-->
+<!--        android:id="@+id/tw"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text=""-->
+<!--        android:inputType="textMultiLine"-->
+<!--        android:lines="5"/>-->
+
 
     <Button
         android:id="@+id/button_1"
+        android:backgroundTint="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="BTN1" />
+        android:textColor="@color/white"
+        android:text="@string/btn1" />
 
-    <TextView
-        android:id="@+id/text"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="" />
+        tools:listitem="@layout/item" />
 
 
 </LinearLayout>

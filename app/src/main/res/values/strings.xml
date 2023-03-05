@@ -5,4 +5,5 @@
     <string name="age">age</string>
     <string name="date_ob_birth">date ob birth</string>
     <string name="phone">phone</string>
+    <string name="btn1">BTN1</string>
 </resources>
