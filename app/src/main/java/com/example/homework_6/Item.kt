@@ -7,6 +7,6 @@ data class Item(
     var age: String,
     var dob: String
 
-    ) {
+) {
 
 }
