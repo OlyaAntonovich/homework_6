@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:paddingRight="62dp"
+        android:paddingRight="16dp"
         app:layout_constraintStart_toEndOf="@+id/image_avatar"
         app:layout_constraintTop_toBottomOf="@id/text_name"
         tools:text="Surname" />
@@ -42,7 +42,8 @@
         android:layout_height="wrap_content"
         android:text="del"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@id/text_surname"
+        android:paddingEnd="6dp"
+        app:layout_constraintStart_toEndOf="@id/text_phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_name" />
 
@@ -52,6 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:paddingRight="64dp"
         android:text="phone_number"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/image_avatar"

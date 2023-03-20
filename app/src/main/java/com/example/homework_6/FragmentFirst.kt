@@ -16,6 +16,8 @@ import android.view.ViewGroup
 import android.widget.EditText
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.homework_6.databinding.FragmentFirstBinding
 
@@ -68,9 +70,9 @@ class FragmentFirst : Fragment() {
                 context?.let { it1 ->
                     DatePickerDialog(
                         it1,
-                        DatePickerDialog.OnDateSetListener { _, mDay, mMonth, mYear
+                        { _, mDay, mMonth, mYear
                             ->
-                            editTextDob.setText("" + mDay + "." + (mMonth+1) + "." + mYear)
+                            editTextDob.setText("" + mDay + "." + (mMonth + 1) + "." + mYear)
                         },
                         day, month, year
                     )
@@ -119,16 +121,20 @@ class FragmentFirst : Fragment() {
                 button1.setOnClickListener {
                     val item = makeItem(editTextFields)
                     items.add(item)
-//                    tw.text = items.toString()
                     adapter.notifyDataSetChanged()
-
                 }
 
             }
 
-
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.adapter = adapter
+
+            button2.setOnClickListener {
+
+                val direction = FragmentFirstDirections.toSecondFragment(items.toTypedArray())
+                findNavController().navigate(direction)
+
+            }
 
         }
 
@@ -148,10 +154,8 @@ class FragmentFirst : Fragment() {
             listEditText[2].text.toString(),
             listEditText[3].text.toString(),
             listEditText[4].text.toString()
-
         )
     }
-
 
 }
 

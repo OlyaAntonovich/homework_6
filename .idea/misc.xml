@@ -8,8 +8,11 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/homework_6/app/src/main/res/drawable/buttonselector.xml" value="0.2345" />
         <entry key="..\:/Users/User/AndroidStudioProjects/homework_6/app/src/main/res/drawable/ic_launcher_background.xml" value="0.119" />
         <entry key="..\:/Users/User/AndroidStudioProjects/homework_6/app/src/main/res/drawable/images.xml" value="0.202" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/homework_6/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/homework_6/app/src/main/res/layout/fragment_first.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/homework_6/app/src/main/res/layout/item.xml" value="0.253125" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/homework_6/app/src/main/res/layout/fragment_second.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/homework_6/app/src/main/res/layout/item.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/homework_6/app/src/main/res/layout/item_second.xml" value="0.253125" />
       </map>
     </option>
   </component>
