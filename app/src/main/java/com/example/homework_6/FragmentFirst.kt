@@ -4,43 +4,35 @@ package com.example.homework_6
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.graphics.Color
+import android.icu.text.SimpleDateFormat
 import android.icu.util.Calendar
+import android.icu.util.LocaleData
 import android.os.Build
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.text.format.DateFormat.format
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.homework_6.databinding.FragmentFirstBinding
+import com.google.android.material.datepicker.MaterialDatePicker
+import java.util.*
+import java.util.logging.SimpleFormatter
 
 
 class FragmentFirst : Fragment() {
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = requireNotNull(_binding)
     private var items = mutableListOf<Item>()
-    private val calendar = if (Build.VERSION.SDK_INT >= VERSION_CODES.N) {
-        Calendar.getInstance()
-    } else {
-        TODO("VERSION.SDK_INT < N")
-    }
-
-    @RequiresApi(VERSION_CODES.N)
-    private val year = calendar.get(Calendar.YEAR)
-
-    @RequiresApi(VERSION_CODES.N)
-    private val month = calendar.get(Calendar.MONTH)
-
-    @RequiresApi(VERSION_CODES.N)
-    private val day = calendar.get(Calendar.DAY_OF_MONTH)
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -67,18 +59,17 @@ class FragmentFirst : Fragment() {
             )
 
             editTextDob.setOnClickListener {
-                context?.let { it1 ->
-                    DatePickerDialog(
-                        it1,
-                        { _, mDay, mMonth, mYear
-                            ->
-                            editTextDob.setText("" + mDay + "." + (mMonth + 1) + "." + mYear)
-                        },
-                        day, month, year
-                    )
 
+                val datePicker =
+                    MaterialDatePicker.Builder.datePicker()
+                        .setTitleText("Select date")
+                        .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                        .build()
 
-                }?.show()
+                datePicker.show(requireActivity().supportFragmentManager, "tag")
+                datePicker.addOnPositiveButtonClickListener {
+                    editTextDob.setText(datePicker.headerText)
+                }
 
             }
 
@@ -156,6 +147,8 @@ class FragmentFirst : Fragment() {
             listEditText[4].text.toString()
         )
     }
+
+
 
 }
 

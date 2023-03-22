@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.view.OneShotPreDrawListener.add
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.homework_6.databinding.FragmentSecondBinding
 
@@ -17,7 +18,6 @@ class FragmentSecond : Fragment() {
     private val args by navArgs<FragmentSecondArgs>()
 
     private val itemSecond = mutableListOf<ItemSecond>()
-
 
 
     override fun onCreateView(
@@ -42,8 +42,12 @@ class FragmentSecond : Fragment() {
         val adapterSecond = AdapterSecond(itemSecond)
 
         adapterSecond.notifyDataSetChanged()
-
         binding.recyclerViewOne.layoutManager = LinearLayoutManager(requireContext())
+
+        binding.buttonTab.setOnClickListener {
+            binding.recyclerViewOne.layoutManager = GridLayoutManager(requireContext(),2)
+        }
+
         binding.recyclerViewOne.adapter = adapterSecond
 
 
