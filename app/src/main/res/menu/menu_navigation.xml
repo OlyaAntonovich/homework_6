@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_1"
+        android:icon="@android:drawable/ic_delete"
+        android:title="Action1" />
+
+    <item
+        android:id="@+id/action_2"
+        android:icon="@drawable/ic_baseline_clear_24"
+        android:title="Action2" />
+
+    <item
+        android:id="@+id/action_3"
+        android:icon="@android:drawable/ic_delete"
+        android:title="Action3" />
+
+
+</menu>
