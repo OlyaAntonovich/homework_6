@@ -3,7 +3,6 @@ package com.example.homework_6
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.homework_6.R.drawable
 import com.example.homework_6.databinding.ItemBinding
@@ -19,7 +18,7 @@ class Adapter(
 
         fun bind(item: Item) {
 
-            val imAv = when(item.name.first()){
+            val imAv = when (item.name.first()) {
                 in 'a'..'c' -> drawable.ic_boat_fish
                 in 'd'..'f' -> drawable.ic_sea_horse
                 in 'g'..'j' -> drawable.ic_many_fish
@@ -27,7 +26,7 @@ class Adapter(
                 in 'n'..'p' -> drawable.ic_turtle
                 in 'q'..'s' -> drawable.ic_two_fish
                 in 't'..'w' -> drawable.ic_whale_birds
-                else-> drawable.ic_fish_boat
+                else -> drawable.ic_fish_boat
             }
 
             binding.textName.text = item.name

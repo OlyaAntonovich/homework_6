@@ -10,11 +10,10 @@
         android:id="@+id/image_avatar"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:paddingRight="16dp"
+        android:paddingEnd="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription"
-        tools:src="@tools:sample/avatars" />
+        tools:ignore="ContentDescription,RtlSymmetry" />
 
     <TextView
         android:id="@+id/text_name"
@@ -30,41 +29,42 @@
         android:id="@+id/text_surname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingEnd="8dp"
         android:textSize="20sp"
-        android:paddingRight="16dp"
         app:layout_constraintStart_toEndOf="@+id/image_avatar"
         app:layout_constraintTop_toBottomOf="@id/text_name"
+        tools:ignore="RtlSymmetry"
         tools:text="Surname" />
+
 
     <Button
         android:id="@+id/btn_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="del"
+        android:textColor="#E1F5FE"
         android:textSize="12sp"
-        android:paddingEnd="6dp"
-        app:layout_constraintStart_toEndOf="@id/text_phone"
+        android:text = "DEL"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/text_phone"
         app:layout_constraintTop_toBottomOf="@id/text_name" />
-
 
     <TextView
         android:id="@+id/text_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:paddingRight="64dp"
-        android:text="phone_number"
+        android:paddingEnd="64dp"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/image_avatar"
-        app:layout_constraintTop_toBottomOf="@+id/text_surname" />
+        app:layout_constraintTop_toBottomOf="@+id/text_surname"
+        tools:ignore="RtlSymmetry" />
 
     <TextView
         android:id="@+id/text_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="age"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/image_avatar"
         app:layout_constraintTop_toBottomOf="@+id/text_phone" />
@@ -73,7 +73,6 @@
         android:id="@+id/text_dob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="date of birth"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/image_avatar"
         app:layout_constraintTop_toBottomOf="@+id/text_age" />

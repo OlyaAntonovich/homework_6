@@ -1,38 +1,37 @@
 package com.example.homework_6
 
 
+import android.Manifest
 import android.annotation.SuppressLint
-import android.app.DatePickerDialog
+import android.content.Intent
 import android.graphics.Color
-import android.icu.text.SimpleDateFormat
-import android.icu.util.Calendar
-import android.icu.util.LocaleData
-import android.os.Build
+import android.net.Uri
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.text.format.DateFormat.format
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.homework_6.databinding.FragmentFirstBinding
 import com.google.android.material.datepicker.MaterialDatePicker
-import java.util.*
-import java.util.logging.SimpleFormatter
+import com.google.android.material.divider.MaterialDividerItemDecoration
 
 
 class FragmentFirst : Fragment() {
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = requireNotNull(_binding)
     private var items = mutableListOf<Item>()
+    private val launcher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -95,9 +94,9 @@ class FragmentFirst : Fragment() {
 
                     button1.isEnabled = condition
                     if (button1.isEnabled) {
-                        button1.setBackgroundColor(Color.parseColor("#FF0000"))
+                        button1.setBackgroundColor(Color.parseColor("#26C6DA"))
                     } else {
-                        button1.setBackgroundColor(Color.parseColor("black"))
+                        button1.setBackgroundColor(Color.parseColor("#E1F5FE"))
                     }
                 }
             }
@@ -119,11 +118,37 @@ class FragmentFirst : Fragment() {
 
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.adapter = adapter
+            recyclerView.addItemDecoration(
+                MaterialDividerItemDecoration(
+                    requireContext(),
+                    MaterialDividerItemDecoration.VERTICAL
+                )
+            )
 
             button2.setOnClickListener {
 
                 val direction = FragmentFirstDirections.toSecondFragment(items.toTypedArray())
                 findNavController().navigate(direction)
+
+            }
+
+            toolbar.setOnMenuItemClickListener {
+                if (it.itemId == R.id.action_1) {
+
+                    val web =
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://www.britannica.com/browse/Fish")
+                        )
+                    startActivity(web)
+                }
+                if (it.itemId == R.id.action_2) {
+                    launcher.launch(Manifest.permission.ACCESS_COARSE_LOCATION)
+                    true
+
+                } else {
+                    false
+                }
 
             }
 
@@ -147,8 +172,6 @@ class FragmentFirst : Fragment() {
             listEditText[4].text.toString()
         )
     }
-
-
 
 }
 
