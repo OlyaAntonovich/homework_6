@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">homework_6</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="name">name</string>
+    <string name="surname">surname</string>
+    <string name="age">age</string>
+    <string name="date_ob_birth">date ob birth</string>
+    <string name="phone">phone</string>
+    <string name="btn1">BTN1</string>
+    <string name="acsess_location">Acsess Location</string>
+    <string name="fish_web">Fish web</string>
 </resources>
